@@ -12,8 +12,30 @@ contract MyEpicNFT is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
+    //Bases public bases = new Bases();
+
     constructor() ERC721 ("SquareNFT","SQUARE") {
         console.log("This is my NFT contract. whassup!");
+    }
+
+    /**function pickRandomSVG(uint256 tokenId) public view returns (string memory){
+        uint256 rand = random(string(abi.encodePacked("Rand_SVG", Strings.toString(tokenId))));
+        rand = rand % 5;
+        if(rand == 0){
+            return bases.einar();
+        } else if (rand == 1){
+            return bases.jody();
+        } else if (rand == 2){
+            return bases.eugene();
+        } else if (rand == 3){
+            return bases.miles();
+        } else {
+            return bases.jakob();
+        }
+    }*/
+
+    function random(string memory input) internal pure returns (uint256) {
+      return uint256(keccak256(abi.encodePacked(input)));
     }
 
     function makeAnEpicNFT() public {

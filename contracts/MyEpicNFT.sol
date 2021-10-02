@@ -1,4 +1,6 @@
-pragma solidity 0.8.0;
+pragma solidity ^0.8.0;
+// SPDX-License-Identifier: MIT
+
 
 // We need some util functions for strings.
 import "@openzeppelin/contracts/utils/Strings.sol";
